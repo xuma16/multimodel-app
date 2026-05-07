@@ -94,17 +94,20 @@ def show():
         st.markdown(
             f"""
             <div style="
-                background-color:{color};
+                background-color:skyblue;
                 padding:10px;
                 border-radius:10px;
-                margin-bottom:10px;
+                margin-bottom:5px;
+                display:inline-block;
+                width:fit-content;
+                max-width:70%;
+                word-wrap:break-word;
             ">
-                {icon} <b>Bot</b>
-                <span style="font-size:10px;color:gray;">[{chat['time']}] &nbsp;•&nbsp; {label}</span><br>
+                🤖 <b>Bot</b> <span style="font-size:10px;color:gray;">[{chat['time']}]</span><br>
                 {chat['bot']}
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
     # ---------------- Disclaimer ----------------
