@@ -23,11 +23,6 @@ def show():
         """,
         unsafe_allow_html=True
     )
-    st.markdown(
-        '<div class=header"><h1>Hellow Your Welcome</h1></div>'
-        '<div class="center">Ask me about diabets<br> Niulize kuhusu kisukari</div>',
-        unsafe_allow_html=True
-        )
 
     # ---------------- Load Models via Router ----------------
     try:
@@ -35,12 +30,12 @@ def show():
     except Exception as e:
         st.error(f"❌ Error loading models: {e}")
         st.stop()
-
-    # ---------------- Description ----------------
-    st.write(
-        "Ask about diabetes in English or Swahili\n"
-        "Uliza kuhusu kisukari kwa Kiingereza au Kiswahili"
-    )
+        
+    st.markdown(
+        '<div class=header"><h1>Hellow Your Welcome</h1></div>'
+        '<div class="center">Ask me about diabets<br> Niulize kuhusu kisukari</div>',
+        unsafe_allow_html=True
+        )
 
     # ---------------- Session State ----------------
     if "chat_history" not in st.session_state:
