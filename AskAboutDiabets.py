@@ -9,7 +9,25 @@ MODEL_BADGE = {
 
 
 def show():
-    st.title("🤖 Diabetes AI Chatbot")
+    st.markdown(
+        """
+            <style> 
+            h1{text-align:center;
+                color:brown;
+            }
+            .center{
+                text-align:center;
+                color:brown;
+                }
+            </style>
+        """,
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class=header"><h1>Hellow Your Welcome</h1></div>'
+        '<div class="center">Ask me about diabets<br> Niulize kuhusu kisukari</div>',
+        unsafe_allow_html=True
+        )
 
     # ---------------- Load Models via Router ----------------
     try:
@@ -58,17 +76,24 @@ def show():
 
         st.markdown(
             f"""
-            <div style="
-                background-color:#e6f2ff;
-                padding:10px;
-                border-radius:10px;
-                margin-bottom:5px;
-            ">
-                🧑 <b>You</b> <span style="font-size:10px;color:gray;">[{chat['time']}]</span><br>
-                {chat['user']}
+            <div style =" display:flex; justify-content:flex-end;">
+                <div style="
+                    background-color:#e6f2ff;
+                    padding:10px;
+                    border-radius:10px;
+                    margin-bottom:5px;
+                    text-align: right;
+                    display:inline-block;
+                    width:fit-content;
+                    max-width:70%;
+                    word-wrap:break-word;
+                ">
+                    🧑 <b>You</b> <span style="font-size:10px;color:gray;">[{chat['time']}]</span><br>
+                    {chat['user']}
+                </div>
             </div>
             """,
-            unsafe_allow_html=True,
+            unsafe_allow_html=True
         )
 
         st.markdown(
@@ -88,4 +113,7 @@ def show():
         )
 
     # ---------------- Disclaimer ----------------
-    st.write("⚠️ For education only. Consult a doctor.")
+    st.markdown(
+        '<div class="center">⚠️ For education only. Consult a doctor.</div>',
+    unsafe_allow_html=True
+    )
